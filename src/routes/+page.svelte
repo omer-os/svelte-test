@@ -1,11 +1,8 @@
 <script>
-    let src="https://miro.medium.com/0*qeurjXuUaA1o3nCc.jpg"
-    let name = "omar";
+    import Button from "./components/Button.svelte";
+    import HtmlTags from "./components/HtmlTags.svelte";
 </script>
 
-<p>
-    {name}
-</p>
+<Button />
 
-
-<img {src} alt="">
+<HtmlTags />
