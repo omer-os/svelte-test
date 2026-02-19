@@ -1,15 +1,19 @@
 <script>
-    let show = $state(false);
+    async function getUser() {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+        if (!response.ok) throw new Error('Failed to fetch');
+        return await response.json();
+    }
 
-
-    $effect(()=>{
-        console.log("toggled")
-        show
-    })
+    let userPromise = $state(getUser());
 </script>
 
-<button on:click={() => (show = !show)}> toggle </button>
+<button onclick={() => userPromise = getUser()}>Reload Data</button>
 
-<p>
-    im {show}
-</p>
+{#await userPromise}
+    <p>Loading...</p>
+{:then user}
+    <p>Name: {user.name}</p>
+{:catch error}
+    <p>Error: {error.message}</p>
+{/await}
