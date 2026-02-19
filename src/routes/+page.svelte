@@ -1,15 +1,13 @@
 <script>
+    let numbers = $state([1, 2, 3, 4]);
+    let total = $derived(numbers.reduce((t, n) => t + n, 0));
 
-    let num = $state(1);
-    let multi= $derived(num * 2)
+    function addNumber() {
+        numbers.push(numbers.length + 1);
+        console.log($state.snapshot(numbers));
+    }
 </script>
 
-<button onclick={() => (num = num += 1)}> inc </button>
+<p>{numbers.join(" + ")} = {total}</p>
 
-
-<p>
-    number is {num}
-</p>
-<p>
-    multiplied by two is {multi}
-</p>
+<button onclick={addNumber}> Add a number </button>
