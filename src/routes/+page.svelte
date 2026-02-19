@@ -1,13 +1,15 @@
 <script>
-    let numbers = $state([1, 2, 3, 4]);
-    let total = $derived(numbers.reduce((t, n) => t + n, 0));
+    let show = $state(false);
 
-    function addNumber() {
-        numbers.push(numbers.length + 1);
-        console.log($state.snapshot(numbers));
-    }
+
+    $effect(()=>{
+        console.log("toggled")
+        show
+    })
 </script>
 
-<p>{numbers.join(" + ")} = {total}</p>
+<button on:click={() => (show = !show)}> toggle </button>
 
-<button onclick={addNumber}> Add a number </button>
+<p>
+    im {show}
+</p>
