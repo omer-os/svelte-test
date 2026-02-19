@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+    let src="https://miro.medium.com/0*qeurjXuUaA1o3nCc.jpg"
+    let name = "omar";
+</script>
+
+<p>
+    {name}
+</p>
+
+
+<img {src} alt="">
