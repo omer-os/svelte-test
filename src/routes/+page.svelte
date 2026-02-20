@@ -1,19 +1,16 @@
 <script>
-    async function getUser() {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
-        if (!response.ok) throw new Error('Failed to fetch');
-        return await response.json();
+    let count = $state(0);
+    async function doTheThing() {
+        count += 1;
     }
 
-    let userPromise = $state(getUser());
+    $effect(() => {
+        console.log(count);
+    });
 </script>
 
-<button onclick={() => userPromise = getUser()}>Reload Data</button>
-
-{#await userPromise}
-    <p>Loading...</p>
-{:then user}
-    <p>Name: {user.name}</p>
-{:catch error}
-    <p>Error: {error.message}</p>
-{/await}
+<button onclick={doTheThing}>make plus one</button>
+<input
+    type="number"
+    bind:value={count}
+/>
