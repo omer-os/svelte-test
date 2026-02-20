@@ -1,9 +1,7 @@
 <script>
-    let {data, children } = $props();
-    console.log(data);
-    
+    let { children } = $props();
 </script>
 
-<div>
+<div class="bg-slate-950 min-h-dvh w-full text-white">
     {@render children()}
-     <!-- {JSON.stringify(data)} --> </div>
+</div>

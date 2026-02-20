@@ -1,16 +1,16 @@
 <script>
+    import { enhance } from '$app/forms';
+
     let { data } = $props();
 </script>
 
 <div>
-    <!-- {#each data.posts as post}
-        <div class="py-4">
-            <div class="font-bold">
-                {post.title}
-            </div>
-            <div class="text-zinc-500">
-                {post.body}
-            </div>
-        </div>
-    {/each} -->
+    <form method="POST" action="?/create" use:enhance>
+        <label>
+            add a todo:
+            <input name="description" class="text-black" autocomplete="off" />
+        </label>
+
+        <button> submit </button>
+    </form>
 </div>
