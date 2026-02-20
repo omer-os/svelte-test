@@ -3,9 +3,12 @@
         console.log("clicked ");
     };
 
-
-    let {title} = $props()
+    let { title } = $props();
 </script>
 
-<button class="py-2 px-3 bg-orange-600 text-white rounded" on:click={clicked}> {title} </button>
-<button class="py-2 px-3 bg-orange-600 text-white rounded" on:click={clicked}> {title} </button>
+<button class="py-2 px-3 bg-orange-600 text-white rounded" onclick={clicked}>
+    {title}
+</button>
+<button class="py-2 px-3 bg-orange-600 text-white rounded" onclick={clicked}>
+    {title}
+</button>
