@@ -1,22 +1,27 @@
-import { fail, type Actions } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
+import type { Actions } from "@sveltejs/kit";
+import z from "zod";
 
-export const load:PageServerLoad=({ cookies }) => {
-    console.log("load run");
-    
-}
+const userSchema = z.object({
+    id: z.string(),
+    name: z.string(),
+    age: z.string()
+})
 
-export const actions:Actions = {
-	create: async ({ cookies, request }) => {
-		const data = await request.formData();
 
-		try {
-  
-		} catch (error) {
-			return fail(422, {
-				description: data.get('description'),
-				// error: error?.message
-			});
-		}
-	}
+export const actions: Actions = {
+    add: async ({ request }) => {
+        const formdata = await request.formData()
+        const data = Object.fromEntries(formdata)
+        const newUser = userSchema.safeParse(data)
+
+
+        console.log("creating using with the data:", {
+            ...newUser
+        })
+
+        return{
+            hello:"world"
+        }
+
+    }
 }
