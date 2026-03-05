@@ -1,43 +1,18 @@
-<script lang="ts">
-  import { fly } from "svelte/transition";
-  import { createNoteState } from "./state.svelte";
+<script lang="ts"></script>
 
-  const NoteState = new createNoteState();
-</script>
-
-<div class="p-2 rounded-md bg-zinc-800 border border-zinc-700 flex gap-3">
-  <input type="text" bind:value={NoteState.newNote} />
-  <button
-    onclick={() =>
-      NoteState.addNote({
-        id: crypto.randomUUID(),
-        title: NoteState.newNote,
-        date: new Date().toISOString(),
-        checked: false,
-      })}>add</button
+<div class="h-dvh flex-col w-dvw flex items-center justify-center">
+  <div
+    class="h-[8em] w-[8em] bg-zinc-800 flex-col rounded-full flex items-center justify-center font-black text-5xl"
   >
-</div>
-
-<div
-  class="p-2 rounded-md bg-zinc-800 overflow-hidden mt-4 flex-col border border-zinc-700 flex gap-3"
->
-  {#each NoteState.notes as note (note.id)}
-    <div
-      title={note.date}
-      class="flex gap-2"
-      transition:fly={{
-        x: 20,
-        opacity: 0,
-      }}
-    >
-      <input type="checkbox" id="check-{note.id}" bind:checked={note.checked} />
-      <label class:line-through={note.checked} for="check-{note.id}"
-        >{note.title}</label
-      >
-      <button
-        class="bg-red-600 py-2 px-3 text-xs"
-        onclick={() => NoteState.removeNote(note.id)}>x</button
-      >
+    10:50:00
+    <div class="flex gap-2 p-4">
+      <div class="text-lg bg-black py-2 px-3 rounded font-medium">pause</div>
+      <div class="text-lg bg-black py-2 px-3 rounded font-medium">reset</div>
     </div>
-  {/each}
+  </div>
+  <div class="mx-auto w-max flex gap-2">
+    <button class="bg-zinc-700 px-4 py-3 rounded">5:00</button>
+    <button class="bg-zinc-700 px-4 py-3 rounded">5:00</button>
+    <button class="bg-zinc-700 px-4 py-3 rounded">5:00</button>
+  </div>
 </div>
