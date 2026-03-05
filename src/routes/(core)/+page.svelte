@@ -1,18 +1,19 @@
-<script lang="ts"></script>
+<script>
+  import Stat1 from "$lib/components/custom/home/stat-1.svelte";
+  import Stat2 from "$lib/components/custom/home/stat-2.svelte";
+  import Button from "$lib/components/ui/button/button.svelte";
+  import { ArrowLeft } from "@lucide/svelte";
+</script>
 
-<div class="h-dvh flex-col w-dvw flex items-center justify-center">
-  <div
-    class="h-[8em] w-[8em] bg-zinc-800 flex-col rounded-full flex items-center justify-center font-black text-5xl"
-  >
-    10:50:00
-    <div class="flex gap-2 p-4">
-      <div class="text-lg bg-black py-2 px-3 rounded font-medium">pause</div>
-      <div class="text-lg bg-black py-2 px-3 rounded font-medium">reset</div>
-    </div>
-  </div>
-  <div class="mx-auto w-max flex gap-2">
-    <button class="bg-zinc-700 px-4 py-3 rounded">5:00</button>
-    <button class="bg-zinc-700 px-4 py-3 rounded">5:00</button>
-    <button class="bg-zinc-700 px-4 py-3 rounded">5:00</button>
-  </div>
+<div class="flex p-4 pt-0 gap-3 items-center">
+  <Button size="icon" variant="outline" class="rounded-full">
+    <ArrowLeft />
+  </Button>
+
+  <div class="text-4xl">Invoices</div>
+</div>
+
+<div class="flex px-4 gap-2">
+  <Stat1 />
+  <Stat2 />
 </div>

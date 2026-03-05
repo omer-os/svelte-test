@@ -1,7 +1,11 @@
 <script>
-    let { children } = $props();
+  import MainLayout from "$lib/components/custom/layout/main-layout.svelte";
+
+  import { ModeWatcher } from "mode-watcher";
+  let { children } = $props();
 </script>
 
-<div class="bg-slate-950 min-h-dvh w-full text-white">
-    {@render children()}
-</div>
+<ModeWatcher />
+<MainLayout>
+  {@render children()}
+</MainLayout>
