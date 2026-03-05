@@ -4,21 +4,21 @@
 </script>
 
 <div
-  class="rounded-xl gap-5 grid grid-cols-3 p-4 grid-rows-[1fr_1fr] h-[12em] flex-1 bg-secondary"
+  class="rounded-xl gap-5 grid grid-cols-3 p-4 grid-rows-[1fr_1fr] h-[14em] flex-1 bg-secondary"
 >
   <div class="flex gap-2 flex-col">
     <p class="text-muted-foreground">Overdue</p>
-    <p class="text-3xl">$4,000</p>
+    <p class="text-3xl font-bold">$4,000</p>
   </div>
 
   <div class="flex gap-2 flex-col">
     <p class="text-muted-foreground">Overdue</p>
-    <p class="text-3xl">$4,000</p>
+    <p class="text-3xl font-bold">$4,000</p>
   </div>
 
   <div class="flex gap-2 flex-col">
     <p class="text-muted-foreground">Overdue</p>
-    <p class="text-3xl">$4,000</p>
+    <p class="text-3xl font-bold">$4,000</p>
   </div>
   <div class="flex flex-col">
     <div class="flex gap-2">
