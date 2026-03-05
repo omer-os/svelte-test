@@ -1,4 +1,6 @@
 <script>
+  import InvoiceLeftCard from "$lib/components/custom/invoices/InvoiceLeftCard.svelte";
+  import InvoiceRightCard from "$lib/components/custom/invoices/InvoiceRightCard.svelte";
   import Button from "$lib/components/ui/button/button.svelte";
   import { ArrowLeft } from "@lucide/svelte";
 </script>
@@ -11,4 +13,7 @@
   <div class="text-4xl">Invoices</div>
 </div>
 
-<div class="flex px-4 gap-2"></div>
+<div class="flex px-4 gap-2">
+  <InvoiceLeftCard />
+  <InvoiceRightCard />
+</div>
